@@ -17,7 +17,7 @@
         margin-right: 8px;
     }
     
-    .layui-nav-child a {
+    .item-list a {
         margin-left: 30px;
     }
     
@@ -35,15 +35,21 @@
     }
     
     .userinfo {
+        width: 200px;
         height: 60px;
         line-height: 60px;
         text-align: center;
         font-size: 12px;
         user-select: none;
+        box-sizing: border-box;
     }
     
     .layui-side-scroll .userinfo {
         border-bottom: 1px solid #1f1e1e;
+    }
+    
+    .top_list {
+        text-align: center;
     }
     
     .layui-nav-img {

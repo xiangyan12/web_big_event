@@ -12,29 +12,8 @@ $(function() {
 
 
     })
-    $('.login_box .icon-yanjing_yincang_o').on('click', function() {
-        $('[name="password"]').attr('type', 'text')
-        $('.icon-yanjing_xianshi_o').show()
-        $(this).hide()
-    })
-    $('.login_box .icon-yanjing_xianshi_o').on('click', function() {
-        $(' [name="password"]').attr('type', 'password')
-        $('.icon-yanjing_yincang_o').show()
-        $(this).hide()
-    })
 
-
-    $('.reg_box .icon-yanjing_yincang_o').on('click', function() {
-        $('[name="reg_userpwd"]').attr('type', 'text')
-        $('.icon-yanjing_xianshi_o').show()
-        $(this).hide()
-    })
-    $('.reg_box .icon-yanjing_xianshi_o').on('click', function() {
-            $('[name="reg_userpwd"]').attr('type', 'password')
-            $('.icon-yanjing_yincang_o').show()
-            $(this).hide()
-        })
-        // 表单验证
+    // 表单验证
     let form = layui.form
     let layer = layui.layer
     form.verify({
@@ -52,7 +31,10 @@ $(function() {
     $('#form_reg').on('submit', function(e) {
             e.preventDefault()
                 // 发起请求
-            let data = { username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=reg_userpwd]').val() }
+            var data = {
+                username: $('#form_reg [name=username]').val(),
+                password: $('#form_reg [name=password]').val()
+            }
             $.post('/api/reguser', data, function(res) {
                 if (res.status !== 0) {
                     return layer.msg(res.message)
